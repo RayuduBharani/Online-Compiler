@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { ScrollArea } from '../ui/scroll-area';
 
 interface DesktopOutputProps {
     error: string;
@@ -33,10 +34,10 @@ export default function DesktopOutput({
                 )}
 
                 {output && (
-                    <div className="border border-muted rounded-md bg-background p-4 font-mono text-sm whitespace-pre-wrap text-foreground shadow-sm">
+                    <ScrollArea className="w-auto h-[75vh] border border-muted rounded-md bg-background p-4 font-mono text-sm whitespace-pre-wrap text-foreground shadow-sm">
                         {output}
                         <p className='pt-10 text-muted-foreground'>=== Code Execution Successful ===</p>
-                    </div>
+                    </ScrollArea>
                 )}
 
                 {!output && !error && !isRunning && !showInputBox && (

@@ -86,11 +86,7 @@ function modifyCodeToSuppressInputPrompts(code) {
         (match, prompt) => {
             return `(lambda: (sys.stderr.write("${prompt}"), input())[1])()`;
         }
-    );
-    
-    console.log('Original code:', code);
-    console.log('Modified code:', modifiedCode);
-    
+    );    
     return modifiedCode;
 }
 

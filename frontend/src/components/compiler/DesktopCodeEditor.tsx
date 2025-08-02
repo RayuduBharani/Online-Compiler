@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Editor } from '@monaco-editor/react'
-import { Sun, Moon, Maximize2, Minus, Plus, Play } from 'lucide-react'
+import { Sun, Moon, Minus, Plus, Play } from 'lucide-react'
 
 interface DesktopCodeEditorProps {
     code: string;
@@ -45,9 +45,6 @@ export default function DesktopCodeEditor({
                         <Button variant="ghost" size="sm" onClick={() => setIsDarkMode(!isDarkMode)}>
                             {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                         </Button>
-                        <Button variant="ghost" size="sm">
-                            <Maximize2 className="h-4 w-4" />
-                        </Button>
                         <div className="flex items-center space-x-1">
                             <Button
                                 variant="ghost"
@@ -79,7 +76,6 @@ export default function DesktopCodeEditor({
                 <CardContent className="flex-1 p-0 h-[calc(100%-60px)]">
                     <div className="h-full">
                         <Editor
-                            height="100%"
                             defaultLanguage="python"
                             value={code}
                             theme={isDarkMode ? 'vs-dark' : 'vs'}
