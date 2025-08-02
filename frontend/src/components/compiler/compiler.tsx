@@ -83,7 +83,7 @@ const PythonCompiler: React.FC = () => {
     setActiveTab('console');
 
     try {
-      const response = await fetch('http://localhost:8000/run-python', {
+      const response = await fetch('https://online-compiler-by-bharani.onrender.com/run-python', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ const PythonCompiler: React.FC = () => {
   // Test backend connection
   const testBackendConnection = async () => {
     try {
-      const response = await fetch('http://localhost:8000');
+      const response = await fetch('https://online-compiler-by-bharani.onrender.com');
       if (response.ok) {
         setBackendStatus('connected');
         setError('');
